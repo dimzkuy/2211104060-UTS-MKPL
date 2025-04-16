@@ -25,12 +25,13 @@ public class TaxFunction {
 	private static int calculateNonTaxableIncome(TaxData data) {
 		int baseNonTaxable = 54_000_000;
 
-		if (data.isMarried()) {
+		FamilyStatus status = data.getFamilyStatus();
+
+		if (status.isMarried()) {
 			baseNonTaxable += 4_500_000;
 		}
 
-		int cappedChildren = Math.min(data.getNumberOfChildren(), 3);
-		baseNonTaxable += cappedChildren * 1_500_000;
+		baseNonTaxable += status.getNumberOfChildren() * 1_500_000;
 
 		return baseNonTaxable;
 	}
