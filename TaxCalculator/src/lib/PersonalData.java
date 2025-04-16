@@ -6,10 +6,10 @@ public class PersonalData {
     public String idNumber;
     public String address;
     public boolean isForeigner;
-    public boolean gender; // true = Laki-laki, false = Perempuan
+    public Gender gender;
 
     public PersonalData(String firstName, String lastName, String idNumber, String address, boolean isForeigner,
-            boolean gender) {
+            Gender gender) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.idNumber = idNumber;
