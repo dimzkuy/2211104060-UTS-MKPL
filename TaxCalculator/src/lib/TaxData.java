@@ -18,6 +18,11 @@ public class TaxData {
         this.numberOfChildren = numberOfChildren;
     }
 
+    public TaxData(int monthlySalary2, int otherMonthlyIncome2, int monthsWorked, int annualDeductible,
+            FamilyStatus familyStatus) {
+        // TODO Auto-generated constructor stub
+    }
+
     // Getters
     public int getMonthlySalary() {
         return monthlySalary;
