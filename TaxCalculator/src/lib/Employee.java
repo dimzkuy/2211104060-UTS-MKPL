@@ -109,8 +109,8 @@ public class Employee {
 	}
 
 	public FamilyStatus getFamilyStatus() {
-		return spouse == null || spouse.isEmpty()
-				? new FamilyStatus()
-				: new FamilyStatus();
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'getFamilyStatus'");
 	}
+
 }
