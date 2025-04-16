@@ -42,4 +42,9 @@ public class TaxData {
     public int getNumberOfChildren() {
         return numberOfChildren;
     }
+
+    public int getMonthsWorked() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getMonthsWorked'");
+    }
 }
