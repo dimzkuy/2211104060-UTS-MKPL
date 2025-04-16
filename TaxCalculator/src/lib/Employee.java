@@ -27,8 +27,7 @@ public class Employee {
 
 	private Spouse spouse;
 
-	private List<String> childNames;
-	private List<String> childIdNumbers;
+	private List<Child> children;
 
 	public Employee(String employeeId, PersonalData personalData, int yearJoined, int monthJoined, int dayJoined) {
 		this.employeeId = employeeId;
@@ -42,8 +41,7 @@ public class Employee {
 		this.monthJoined = monthJoined;
 		this.dayJoined = dayJoined;
 
-		childNames = new LinkedList<String>();
-		childIdNumbers = new LinkedList<String>();
+		children = new LinkedList<>();
 	}
 
 	/**
@@ -86,8 +84,7 @@ public class Employee {
 	}
 
 	public void addChild(String childName, String childIdNumber) {
-		childNames.add(childName);
-		childIdNumbers.add(childIdNumber);
+		children.add(new Child(childName, childIdNumber));
 	}
 
 	public int getAnnualIncomeTax() {
@@ -110,6 +107,6 @@ public class Employee {
 				monthWorkingInYear,
 				annualDeductible,
 				isSingle,
-				childIdNumbers.size());
+				children.size());
 	}
 }
