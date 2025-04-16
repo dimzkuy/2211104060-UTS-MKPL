@@ -9,6 +9,10 @@ public class FamilyStatus {
         this.numberOfChildren = Math.min(numberOfChildren, 3);
     }
 
+    public FamilyStatus() {
+        //TODO Auto-generated constructor stub
+    }
+
     public boolean isMarried() {
         return isMarried;
     }

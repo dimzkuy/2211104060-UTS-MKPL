@@ -88,25 +88,29 @@ public class Employee {
 	}
 
 	public int getAnnualIncomeTax() {
-
-		// Menghitung berapa lama pegawai bekerja dalam setahun ini,
-		// jika pegawai sudah bekerja dari tahun sebelumnya maka dianggap 12 bulan.
-		LocalDate date = LocalDate.now();
-
-		if (date.getYear() == yearJoined) {
-			monthWorkingInYear = date.getMonthValue() - monthJoined;
-		} else {
-			monthWorkingInYear = 12;
-		}
-
-		boolean isSingle = spouse == null || spouse.isEmpty();
-
-		return TaxFunction.calculateTax(
-				monthlySalary,
-				otherMonthlyIncome,
-				monthWorkingInYear,
-				annualDeductible,
-				isSingle,
-				children.size());
+		return new TaxCalculator(this).calculate();
 	}
+
+	public int getMonthsWorkedInCurrentYear() {
+		LocalDate date = LocalDate.now();
+		return (date.getYear() == yearJoined) ? (date.getMonthValue() - monthJoined) : 12;
+	}
+
+	public int getMonthlySalary() {
+		return monthlySalary;
+	}
+
+	public int getOtherMonthlyIncome() {
+		return otherMonthlyIncome;
+	}
+
+	public int getAnnualDeductible() {
+		return annualDeductible;
+	}
+
+	public FamilyStatus getFamilyStatus() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'getFamilyStatus'");
+	}
+
 }
