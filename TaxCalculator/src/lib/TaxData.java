@@ -5,17 +5,15 @@ public class TaxData {
     private int otherMonthlyIncome;
     private int numberOfMonthWorking;
     private int deductible;
-    private boolean isMarried;
-    private int numberOfChildren;
+    private FamilyStatus familyStatus;
 
     public TaxData(int monthlySalary, int otherMonthlyIncome, int numberOfMonthWorking,
-            int deductible, boolean isMarried, int numberOfChildren) {
+            int deductible, FamilyStatus familyStatus) {
         this.monthlySalary = monthlySalary;
         this.otherMonthlyIncome = otherMonthlyIncome;
         this.numberOfMonthWorking = numberOfMonthWorking;
         this.deductible = deductible;
-        this.isMarried = isMarried;
-        this.numberOfChildren = numberOfChildren;
+        this.familyStatus = familyStatus;
     }
 
     public TaxData(int monthlySalary2, int otherMonthlyIncome2, int monthsWorked, int annualDeductible,
@@ -41,11 +39,15 @@ public class TaxData {
     }
 
     public boolean isMarried() {
-        return isMarried;
+        return isMarried();
     }
 
     public int getNumberOfChildren() {
-        return numberOfChildren;
+        return getNumberOfChildren();
+    }
+
+    public FamilyStatus getFamilyStatus() {
+        return familyStatus;
     }
 
     public int getMonthsWorked() {
